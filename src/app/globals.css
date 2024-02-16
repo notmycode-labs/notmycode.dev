@@ -4,9 +4,28 @@
 
 :root {
   --background-color-dark: #000000;
-  --text-color-dark: #f2dce5;
-  --background-color-light: #cbcbcb;
+  --text-color-dark: #e0c5cf;
+  --background-color-light: #e2e2ec;
   --text-color-light: #000000;
+  --title-bg-light: linear-gradient(
+    45deg,
+    rgb(200, 200, 200),
+    rgb(200, 20, 133) 20%,
+    rgb(200, 133, 44) 40%,
+    rgb(30, 100, 40) 60%,
+    rgb(30, 100, 40) 80%,
+    rgb(30, 100, 40) 100%
+  );
+
+  --title-bg-dark: linear-gradient(
+    45deg,
+    rgb(255, 255, 255),
+    rgb(255, 60, 183) 20%,
+    rgb(255, 183, 77) 40%,
+    rgb(76, 175, 80) 60%,
+    rgb(76, 175, 80) 80%,
+    rgb(76, 175, 80) 100%
+  );
 }
 
 @media (prefers-color-scheme: dark) {
@@ -14,11 +33,24 @@
     background-color: var(--background-color-dark);
     color: var(--text-color-dark);
   }
+
+  .title {
+    background: var(--title-bg-dark);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 }
 
 @media (prefers-color-scheme: light) {
   body {
     background-color: var(--background-color-light);
     color: var(--text-color-light);
+  }
+  .title {
+    background: var(--title-bg-light);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
   }
 }
