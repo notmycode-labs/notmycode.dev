@@ -31,7 +31,7 @@ const Navbar = () => {
         </Link>
 
         <Menu
-          menuClassName="z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-md w-56"
+          menuClassName="z-50 min-w-[8rem] overflow-hidden rounded-md border p-1 shadow-lg w-56"
           menuButton={
             <MenuButton className="p-2 font-bold text-lg">Menu</MenuButton>
           }
@@ -40,7 +40,7 @@ const Navbar = () => {
           {links.map(function (data) {
             return (
               <Link key={data.href} href={data.href} aria-label={data.label}>
-                <MenuItem className="flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-white/5">
+                <MenuItem className="flex cursor-default select-none items-center rounded-md px-2 py-1.5 text-sm outline-none focus:bg-white/70 dark:focus:bg-white/5">
                   {data.label}
                 </MenuItem>
               </Link>
