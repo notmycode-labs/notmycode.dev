@@ -12,7 +12,7 @@ const font = Roboto({
 
 export const metadata: Metadata = {
   title: "notmycode",
-  description: "No one knows the future",
+  description: "One way to know is try",
 }
 
 export default function RootLayout({
