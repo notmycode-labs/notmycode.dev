@@ -1,0 +1,36 @@
+<script>
+	export let data = [];
+
+	$: sortedData = [...data.data].sort((a, b) => new Date(b.date) - new Date(a.date));
+</script>
+
+<svelte:head>
+	<title>notmycode blog</title>
+	<meta name="description" content="Nothing special But it works!." />
+</svelte:head>
+
+<div>
+	{#each sortedData as item}
+		<div class="border p-1.5 rounded-sm mt-1.5 hover:border-pink-700 border-pink-300 w-full">
+			<a href={`/blog/${item.slug}`}>
+				<h2 class="font-bold text-lg">{item.title}</h2>
+			</a>
+			<p class="text-sm">{item.desc}</p>
+
+			<div>
+				Tags:
+				{#each item.tags as tag}
+					<span class="border mt-1.5 px-2 rounded-lg text-xs">{tag}</span>
+				{/each}
+			</div>
+
+			<p class="text-xs font-semibold">
+				Posted by {item.author} on {new Date(item.date).toLocaleDateString('en-US', {
+					year: 'numeric',
+					month: 'long',
+					day: 'numeric'
+				})}
+			</p>
+		</div>
+	{/each}
+</div>
