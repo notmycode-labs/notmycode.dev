@@ -11,10 +11,12 @@
 
 <div>
 	{#each sortedData as item}
-		<div class="border p-1.5 rounded-sm mt-1.5 hover:border-pink-700 border-pink-300 w-full">
-			<a href={`/blog/${item.slug}`}>
-				<h2 class="font-bold text-lg">{item.title}</h2>
-			</a>
+		<div class="border p-2 rounded-md mt-1.5 hover:border-pink-700 border-pink-300 w-full">
+			<div class="p-2 border-b border-white">
+				<a href={`/blog/${item.slug}`}>
+					<h2 class="font-bold text-lg">{item.title}</h2>
+				</a>
+			</div>
 			<p class="text-sm">{item.desc}</p>
 
 			<div>
