@@ -16,12 +16,13 @@
 		}
 	}
 
+	
 	onMount(() => {
 		document.addEventListener('click', handleClickOutside);
 
-		onDestroy(() => {
+		return () => {
 			document.removeEventListener('click', handleClickOutside);
-		});
+		};
 	});
 </script>
 
