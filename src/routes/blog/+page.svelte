@@ -1,4 +1,6 @@
 <script>
+	import { MetaTags } from 'svelte-meta-tags';
+
 	export let data = [];
 
 	$: sortedData = [...data.data].sort((a, b) => new Date(b.date) - new Date(a.date));
