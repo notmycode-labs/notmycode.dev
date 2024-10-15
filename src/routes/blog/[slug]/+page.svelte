@@ -1,6 +1,6 @@
 <script>
 	import { MetaTags } from 'svelte-meta-tags';
-	import timeFormatHelper from '../../../lib/timeFormat'
+	import timeFormatHelper from '../../../lib/timeFormat';
 	export let data;
 
 	var diffTime = new Date() - new Date(data.meta.date);

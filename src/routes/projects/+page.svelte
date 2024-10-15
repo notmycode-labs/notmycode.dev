@@ -1,7 +1,6 @@
 <script>
-	import timeFormatHelper from '../../lib/timeFormat'
+	import timeFormatHelper from '../../lib/timeFormat';
 	export let data = [];
-
 </script>
 
 {#each data.data as project}
@@ -20,7 +19,9 @@
 			<p class="mt-2">{project.description}</p>
 		</div>
 		<div class="p-2 border-t border-white">
-			<a href={project.link} target="_blank" rel="noopener noreferrer" class="font-bold">Visit Project</a>
+			<a href={project.link} target="_blank" rel="noopener noreferrer" class="font-bold"
+				>Visit Project</a
+			>
 		</div>
 	</div>
 {/each}

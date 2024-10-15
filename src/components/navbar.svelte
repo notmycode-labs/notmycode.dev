@@ -10,7 +10,9 @@
 
 	<div class="text-md ml-auto flex space-x-2 font-bold">
 		<div>
-			<a href="https://github.com/notmycode-labs" target="_blank" rel="noopener noreferrer">GitHub</a>
+			<a href="https://github.com/notmycode-labs" target="_blank" rel="noopener noreferrer"
+				>GitHub</a
+			>
 		</div>
 		<div>
 			<a href="/blog">Blog</a>
