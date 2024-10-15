@@ -16,7 +16,6 @@
 		}
 	}
 
-	
 	onMount(() => {
 		document.addEventListener('click', handleClickOutside);
 
