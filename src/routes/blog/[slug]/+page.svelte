@@ -1,5 +1,6 @@
 <script>
 	import { MetaTags } from 'svelte-meta-tags';
+	import timeFormatHelper from '../../../lib/timeFormat'
 	export let data;
 
 	var diffTime = new Date() - new Date(data.meta.date);
@@ -13,10 +14,7 @@
 		url: 'https://notmycode.dev',
 		title: data.meta.title,
 		description: data.meta.desc,
-		siteName: `Posted by ${data.meta.author} on ${new Date(data.meta.date).toLocaleDateString(
-			'en-US',
-			{ year: 'numeric', month: 'long', day: 'numeric' }
-		)} - ${diffDays} days ago`,
+		siteName: `Posted by ${data.meta.author} on ${timeFormatHelper(data.meta.date)} - ${diffDays} days ago`,
 		images: [
 			{
 				url: 'https://mac.notmycode.dev/images/PSX_20240813_112556.jpg',

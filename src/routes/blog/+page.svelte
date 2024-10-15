@@ -1,6 +1,6 @@
 <script>
-	import { MetaTags } from 'svelte-meta-tags';
-
+	
+	import timeFormatHelper from '../../lib/timeFormat'
 	export let data = [];
 
 	$: sortedData = [...data.data].sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -29,11 +29,7 @@
 			</div>
 
 			<p class="text-xs font-semibold">
-				Posted by {item.author} on {new Date(item.date).toLocaleDateString('en-US', {
-					year: 'numeric',
-					month: 'long',
-					day: 'numeric'
-				})}
+				Posted by {item.author} on {timeFormatHelper(item.date)}
 			</p>
 		</div>
 	{/each}
