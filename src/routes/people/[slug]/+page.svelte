@@ -9,10 +9,23 @@
 	<p><strong>Birth date:</strong> {data.birth_date}</p>
 	<div class="mt-2">
 		<strong>Contacts:</strong>
+
 		{#each data.contacts as contact}
-			{#if contact.email}
-				<a href="mailto:{contact.email}" class="block">{contact.email}</a>
-			{/if}
+			{#each Object.entries(contact) as [platform, value]}
+				<p class="block">
+					{platform}:
+					<a
+						href={platform === 'email' ? `mailto:${value}` : value}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						{value}
+					</a>
+				</p>
+			{/each}
 		{/each}
+		{#if data.link}
+			Website: <a href={data.link} target="_blank" rel="noopener noreferrer">{data.link}</a>
+		{/if}
 	</div>
 </div>

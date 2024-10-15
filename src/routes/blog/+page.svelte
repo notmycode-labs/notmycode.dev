@@ -28,7 +28,9 @@
 			</div>
 
 			<p class="text-xs font-semibold">
-				Posted by <a href={"/people/"+item.author}>{item.author}</a> on {timeFormatHelper(item.date)}
+				Posted by <a href={'/people/' + item.author}>{item.author}</a> on {timeFormatHelper(
+					item.date
+				)}
 			</p>
 		</div>
 	{/each}
