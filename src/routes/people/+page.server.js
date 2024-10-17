@@ -1,7 +1,6 @@
-export async function load({ params }) {
-	const { slug } = params;
-
-	const url = `https://raw.githubusercontent.com/notmycode-labs/everything/refs/heads/main/data/peoples/${slug}.json`;
+export async function load() {
+	const url =
+		'https://raw.githubusercontent.com/notmycode-labs/everything/refs/heads/main/data/peoples.json';
 
 	const response = await fetch(url);
 
@@ -14,5 +13,5 @@ export async function load({ params }) {
 
 	const data = await response.json();
 
-	return data;
+	return { data };
 }

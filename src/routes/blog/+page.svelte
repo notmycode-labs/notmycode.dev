@@ -7,7 +7,6 @@
 	$: sortedData = [...data.data].sort((a, b) => new Date(b.date) - new Date(a.date));
 
 	const fuseOptions = {
-		
 		keys: ['title', 'author', 'desc', 'tags']
 	};
 
