@@ -6,8 +6,6 @@ export const load = async ({ params }) => {
 
 	const { html } = await content.render();
 
-	console.log({ html, metadata });
-
 	return {
 		content: html,
 		meta: metadata
