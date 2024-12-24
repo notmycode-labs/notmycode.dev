@@ -2,21 +2,23 @@
 	import Navmenu from './navmenu.svelte';
 </script>
 
-<nav class="flex items-center py-1.5">
-	<!--<img class="mr-1.5 h-auto w-8 rounded-full"  height="64" width="64"/> */}-->
-	<a href="/">
-		<span class="text-xl font-bold">Home</span>
+<nav class="py-4 px-4 flex flex-wrap items-center justify-between">
+	<a
+		href="/"
+		class="text-xl font-bold text-white hover:text-link-text-color transition mb-2 sm:mb-0"
+	>
+		notmycode.dev
 	</a>
 
-	<div class="text-md ml-auto flex space-x-2 font-bold">
-		<div>
-			<a href="https://github.com/notmycode-labs" target="_blank" rel="noopener noreferrer"
-				>GitHub</a
-			>
-		</div>
-		<div>
-			<a href="/blog">Blog</a>
-		</div>
+	<div class="flex flex-wrap justify-center space-x-2 text-base font-medium">
+		<!-- Static Links for Home and others -->
+		<a href="/" class="hover:text-link-text-color transition">Home</a>
+		<span>/</span>
+		<a href="/about" class="hover:text-link-text-color transition">About</a>
+		<span>/</span>
+		<a href="/projects" class="hover:text-link-text-color transition">Projects</a>
+		<span>/</span>
+
 		<div>
 			<Navmenu />
 		</div>

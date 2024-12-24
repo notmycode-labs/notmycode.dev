@@ -3,6 +3,84 @@
 @tailwind utilities;
 
 :root {
+	--primary: rgb(16, 18, 43);
+	--secondary: #ffddde;
+	--link-text-color: #e281d8;
+}
+
+body {
+	font-family: 'JetBrains Mono', monospace;
+	background: var(--primary);
+	color: var(--secondary);
+	margin: 0;
+}
+
+main {
+	min-height: 100vh;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	margin: 0;
+	padding: 0 10.125rem;
+	box-sizing: border-box;
+}
+
+/* Link styling */
+a {
+	color: var(--link-text-color) !important;
+	font-weight: bold !important;
+}
+
+a:hover {
+	color: rgb(143, 143, 231) !important;
+}
+
+main > * {
+	margin: 1rem;
+}
+
+article section {
+	padding: 1em 0;
+}
+
+#title {
+	color: white;
+	text-shadow:
+		2px 2px 0 #55cdfc,
+		/* Light Blue */ 4px 4px 0 #f7a8b8,
+		/* Pink */ 5px 5px 0 #fff;
+	/* White */
+}
+
+@media only screen and (max-width: 600px) {
+	main {
+		padding: 0 1.125rem;
+	}
+}
+
+.message {
+	z-index: -999999999;
+	font-size: 6px;
+	color: #505050;
+}
+
+#backgroundCanvas {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+#container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+/*
+
+:root {
 	--background-color: rgb(16, 18, 43);
 	--text-color: #ffddde;
 	--link-text-color: #e281d8;
@@ -13,10 +91,6 @@ body {
 	font-family: 'JetBrains Mono', monospace;
 	font-weight: 400;
 	font-style: normal;
-	/*background-image:  url("https://stsci-opo.org/STScI-01J6CWRK073C5KH4QHGP1Z6KA2.png");
-background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;*/
 	background-color: var(--background-color);
 	color: var(--text-color);
 }
@@ -28,6 +102,7 @@ a {
 a:hover {
 	color: rgb(143, 143, 231);
 }
+
 
 #rainbow_title {
 	background: linear-gradient(
@@ -43,3 +118,5 @@ a:hover {
 	-webkit-background-clip: text;
 	color: transparent;
 }
+
+*/
