@@ -36,11 +36,11 @@
 
     {#if isOpen}
         <div
-            class="absolute z-40 mt-2 w-48 border border-gray-300 rounded-md bg-[var(--background-color)] shadow-lg"
+            class="absolute z-20 mt-2 w-48 border border-gray-300 rounded-md bg-[var(--background-color)] shadow-lg"
             style="right: 0; left: auto; top: 100%; max-width: calc(100vw - 20px);"
         >
             {#each links as { href, label }}
-                <a {href} class="block px-4 py-2 hover:bg-gray-800" on:click={stopPropagation}>
+                <a {href} class="block px-4 py-2" on:click={stopPropagation}>
                     {label}
                 </a>
             {/each}
