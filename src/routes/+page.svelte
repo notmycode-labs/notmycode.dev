@@ -1,5 +1,43 @@
 <script>
 	import { MetaTags } from 'svelte-meta-tags';
+
+let clickCount = 0;
+  let firstClickTime = 0;
+
+  import { onMount } from 'svelte';
+
+  onMount(() => {
+    const handleClick = () => {
+      const currentTime = Date.now();
+
+      if (clickCount === 0) {
+        firstClickTime = currentTime;
+      }
+      if (currentTime - firstClickTime <= 600) {
+        clickCount++;
+      } else {
+        clickCount = 1;
+        firstClickTime = currentTime;
+      }
+      if (clickCount === 3) {
+        alert("You're cooked 🤣🫵");
+        document.documentElement.remove();
+      }
+    };
+
+    const titleElement = document.getElementById('title');
+
+    if (titleElement) {
+      titleElement.addEventListener('click', handleClick);
+    }
+
+    return () => {
+      if (titleElement) {
+        titleElement.removeEventListener('click', handleClick);
+      }
+    };
+  });
+
 </script>
 
 <MetaTags
