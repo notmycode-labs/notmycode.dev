@@ -40,7 +40,7 @@
 			</h2>
 			<p class="text-sm sm:text-lg md:text-xl font-light leading-[1.4] max-w-[28em]">
 				And that's why it's
-				<a href="#" class="link relative no-underline whitespace-nowrap"> notmycode.dev </a>
+				<a href="/" class="link relative no-underline whitespace-nowrap"> notmycode.dev </a>
 			</p>
 		</div>
 	</main>
