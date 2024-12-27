@@ -1,18 +1,18 @@
 export async function GET() {
-  const phpVersion = "PHP/5.2.17";
-  const serverInfo = "Apache/1.3.37 (Unix)";
-  const date = new Date().toUTCString();
-  
-  const insecureHeaders = [
-    "X-Powered-By: PHP/5.2.17",
-    "Server: Apache/1.3.37 (Unix)",
-    "X-Content-Type-Options: nosniff",
-    "X-XSS-Protection: 0",
-    "X-Frame-Options: SAMEORIGIN",
-    "Content-Type: text/html; charset=ISO-8859-1",
-  ];
+	const phpVersion = 'PHP/5.2.17';
+	const serverInfo = 'Apache/1.3.37 (Unix)';
+	const date = new Date().toUTCString();
 
-  const responseBody = `
+	const insecureHeaders = [
+		'X-Powered-By: PHP/5.2.17',
+		'Server: Apache/1.3.37 (Unix)',
+		'X-Content-Type-Options: nosniff',
+		'X-XSS-Protection: 0',
+		'X-Frame-Options: SAMEORIGIN',
+		'Content-Type: text/html; charset=ISO-8859-1'
+	];
+
+	const responseBody = `
     <!DOCTYPE html>
     <html>
         <head>
@@ -56,16 +56,16 @@ export async function GET() {
     </html>
   `;
 
-  return new Response(responseBody, {
-    status: 500,
-    headers: {
-      ...insecureHeaders.reduce((acc, header) => {
-        const [key, value] = header.split(": ");
-        acc[key] = value;
-        return acc;
-      }, {}),
-      "Connection": "close",
-      "Date": date,
-    },
-  });
+	return new Response(responseBody, {
+		status: 500,
+		headers: {
+			...insecureHeaders.reduce((acc, header) => {
+				const [key, value] = header.split(': ');
+				acc[key] = value;
+				return acc;
+			}, {}),
+			Connection: 'close',
+			Date: date
+		}
+	});
 }

@@ -6,6 +6,9 @@
 	--primary: rgb(16, 18, 43);
 	--secondary: #ffddde;
 	--link-text-color: #e281d8;
+	--form-bg-color: #1f4e7d;
+	--form-border-color: #ffffff;
+	--button-color: #2a52a6;
 }
 
 body {
@@ -13,6 +16,22 @@ body {
 	background: var(--primary);
 	color: var(--secondary);
 	margin: 0;
+}
+
+.button {
+	background-color: var(--button-color);
+}
+
+input,
+textarea,
+select {
+	border-color: var(--form-border-color);
+	background-color: var(--form-bg-color);
+}
+
+input::placeholder,
+textarea::placeholder {
+	@apply text-gray-300/50;
 }
 
 main {
