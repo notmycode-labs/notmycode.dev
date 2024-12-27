@@ -60,7 +60,7 @@
 	});
 </script>
 
-<div class="md:container md:mx-auto relative w-screen px-2 h-screen overflow-x-hidden overflow-y-auto">
+<div class="md:container md:mx-auto relative w-screen px-2 h-screen overflow-x-hidden">
 	<div bind:this={container} class="absolute inset-0 z-0 pointer-events-none"></div>
 	<div class="relative z-10">
 		<Navbar />
