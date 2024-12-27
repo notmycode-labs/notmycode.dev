@@ -8,8 +8,7 @@
 	const submitForm = async () => {
 		isSubmitting = true;
 
-//logic here
-
+		//logic here
 
 		setTimeout(() => {
 			successMessage = 'meowmeowmeow';

@@ -28,6 +28,7 @@
 	"type": "module",
 	"dependencies": {
 		"fuse.js": "^7.0.0",
+		"owoify-js": "^2.0.0",
 		"vite-plugin-eruda": "^1.0.1"
 	}
 }

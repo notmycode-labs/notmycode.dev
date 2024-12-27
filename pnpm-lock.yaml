@@ -11,6 +11,9 @@ importers:
       fuse.js:
         specifier: ^7.0.0
         version: 7.0.0
+      owoify-js:
+        specifier: ^2.0.0
+        version: 2.0.0
       vite-plugin-eruda:
         specifier: ^1.0.1
         version: 1.0.1
@@ -753,6 +756,9 @@ packages:
   object-hash@3.0.0:
     resolution: {integrity: sha512-RSn9F68PjH9HqtltsSnqYC1XXoWe9Bju5+213R98cNGttag9q9yAOTzdbsqvIa7aNm5WffBZFpWYr2aWrklWAw==}
     engines: {node: '>= 6'}
+
+  owoify-js@2.0.0:
+    resolution: {integrity: sha512-fNweLqYQysAqwka7FXXbiZIa5bzRn00M8NRWaRoEvaKEp3YM6AILE9GP8opfohXfFXv/b36o6dY7joc4UixAqQ==}
 
   package-json-from-dist@1.0.1:
     resolution: {integrity: sha512-UEZIS3/by4OC8vL3P2dTXRETpebLI2NiI5vIrjaD/5UtrkFX/tNbwjTSRAGC/+7CAo2pIcBaRgWmcBBHcsaCIw==}
@@ -1646,6 +1652,8 @@ snapshots:
   object-assign@4.1.1: {}
 
   object-hash@3.0.0: {}
+
+  owoify-js@2.0.0: {}
 
   package-json-from-dist@1.0.1: {}
 

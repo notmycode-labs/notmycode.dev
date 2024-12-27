@@ -3,6 +3,7 @@
 	import '../prism-laserwave.css';
 	import Navbar from '../components/navbar.svelte';
 	import { onMount } from 'svelte';
+	import owoify from 'owoify-js';
 
 	let container;
 
@@ -13,15 +14,33 @@
 		"okay, so here we are, running this endless race, but no one even knows where the damn finish line is, right? we’re all sprinting, pushing ourselves, trying to get ahead, but for what? like, does anyone actually know where this whole thing ends? everyone’s just chasing something, but it’s like we’re all running in circles, trying to catch up with some vague idea of success or happiness, but we have no clue what that even looks like. it’s crazy how we’re constantly told to keep moving, keep achieving, but what happens when you stop and wonder, 'am i even running in the right direction?' like, maybe the whole thing’s a joke, and we’re just all caught up in it, too busy focusing on everyone else’s pace to realize we’re all just racing towards some invisible line that might not even be there.",
 		'what the actual fuck is happiness? like, seriously, what is it really? we’ve all been told to chase it, like it’s this magical thing we’re supposed to reach, but no one seems to agree on what it even is. is it just some fleeting feeling, or is it this deep, life-changing state of mind that we’re all supposed to find? i mean, humans literally just defined it, right? like we made up this whole concept of happiness, as if it’s the ultimate goal, the thing we should all be striving for, but what if it’s just some illusion? what if the whole idea of happiness is just a distraction, a way to get us to keep working and achieving without ever stopping to question what we really need? we’ve built this idea that happiness equals success, or that it comes from'
 	];
+
 	let selectedThought = thoughts[Math.floor(Math.random() * thoughts.length)];
 	const allWords = selectedThought.split(' ');
 
 	let wordsData = [];
 
+	function owoifyText(node, level = 'owo') {
+		if (node.nodeType === Node.TEXT_NODE) {
+			node.textContent = owoify(node.textContent, level);
+		} else if (node.nodeType === Node.ELEMENT_NODE) {
+			node.childNodes.forEach((child) => owoifyText(child, level));
+		}
+	}
+
 	onMount(() => {
+		const urlParams = new URLSearchParams(window.location.search);
+		const replaceWithOwo = urlParams.has('owo');
+		const owoLevel = urlParams.get('owo') || 'owo';
+
+		if (replaceWithOwo) {
+			owoifyText(document.body, owoLevel);
+		}
+
 		allWords.forEach((word) => {
 			const wordElement = document.createElement('div');
 			wordElement.className = 'absolute text-white/10 text-xs z-0';
+
 			wordElement.textContent = word;
 
 			const position = {

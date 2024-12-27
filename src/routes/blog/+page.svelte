@@ -85,7 +85,7 @@
 			<div>
 				Tags:
 				{#each item.tags as tag}
-					<span class="border mt-1.5 px-2 rounded-lg text-xs">{tag}</span>
+					<span class="border mt-1.5 px-2 rounded-md text-xs">{tag}</span>
 				{/each}
 			</div>
 
