@@ -14,9 +14,6 @@ importers:
       owoify-js:
         specifier: ^2.0.0
         version: 2.0.0
-      vite-plugin-eruda:
-        specifier: ^1.0.1
-        version: 1.0.1
     devDependencies:
       '@sveltejs/adapter-auto':
         specifier: ^3.0.0
@@ -1010,9 +1007,6 @@ packages:
   vfile-message@2.0.4:
     resolution: {integrity: sha512-DjssxRGkMvifUOJre00juHoP9DPWuzjxKuMDrhNbk2TdaYYBNMStsNhEOt3idrtI12VQYM/1+iM0KOzXi4pxwQ==}
 
-  vite-plugin-eruda@1.0.1:
-    resolution: {integrity: sha512-fZ+N8Cn7XgeE12VSa7Sb2jhwlFVCEYUjJOr4m8ARDVcWNE9qO8PcC1+G1PUFdt5oAOo/RZkF77MjYB4bSQIEcw==}
-
   vite@5.4.8:
     resolution: {integrity: sha512-FqrItQ4DT1NC4zCUqMB4c4AZORMKIa0m8/URVCZ77OZ/QSNeJ54bU1vrFADbDsuwfIPcgknRkmqakQcgnL4GiQ==}
     engines: {node: ^18.0.0 || >=20.0.0}
@@ -1940,8 +1934,6 @@ snapshots:
     dependencies:
       '@types/unist': 2.0.11
       unist-util-stringify-position: 2.0.3
-
-  vite-plugin-eruda@1.0.1: {}
 
   vite@5.4.8(@types/node@22.7.5):
     dependencies:
