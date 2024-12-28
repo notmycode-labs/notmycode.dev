@@ -59,12 +59,11 @@
 	</a>
 
 	<div class="flex flex-wrap justify-center space-x-2 text-base font-medium">
-		<!-- Static Links for Home and others -->
-		<a href="/about" class="hover:text-link-text-color transition">About</a>
+		<a data-sveltekit-prefetch href="/about" class="hover:text-link-text-color transition">About</a>
 		<span>/</span>
-		<a href="/projects" class="hover:text-link-text-color transition">Projects</a>
+		<a data-sveltekit-prefetch href="/projects" class="hover:text-link-text-color transition">Projects</a>
 		<span>/</span>
-		<a href="/blog" class="hover:text-link-text-color transition">Blog</a>
+		<a data-sveltekit-prefetch href="/blog" class="hover:text-link-text-color transition">Blog</a>
 		<span>/</span>
 		<div>
 			<Navmenu />
