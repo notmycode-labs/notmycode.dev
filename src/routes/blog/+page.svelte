@@ -59,7 +59,7 @@
 
 	{#if query && filteredResults.length > 0 && showDropdown}
 		<ul
-			class="absolute mt-1 border bg-[var(--background-color)] w-full rounded-md max-h-48 overflow-auto"
+			class="z-40 absolute mt-1 border bg-[var(--background-color)] w-full rounded-md max-h-48 overflow-auto"
 		>
 			{#each filteredResults as result}
 				<a href={`/blog/${result.slug}`}>
@@ -85,7 +85,7 @@
 			<div>
 				Tags:
 				{#each item.tags as tag}
-					<span class="border mt-1.5 px-2 rounded-lg text-xs">{tag}</span>
+					<span class="border mt-1.5 px-2 rounded-md text-xs">{tag}</span>
 				{/each}
 			</div>
 
