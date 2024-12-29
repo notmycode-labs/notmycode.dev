@@ -36,7 +36,7 @@
 
 	{#if isOpen}
 		<div
-			class="absolute z-20 mt-2 w-48 border border-gray-300 rounded-md bg-[var(--background-color)] shadow-lg"
+			class="absolute z-20 mt-2 w-48 border border-gray-300 rounded-md bg-[var(--form-bg-color)] shadow-lg"
 			style="right: 0; left: auto; top: 100%; max-width: calc(100vw - 20px);"
 		>
 			{#each links as { href, label }}
