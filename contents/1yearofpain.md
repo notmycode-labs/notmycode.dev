@@ -1,7 +1,7 @@
 ---
 date: 2024-12-22
 title: Celebrating 1 Year of notmycode
-author: Phapoom Saksri (@blueskychan-dev)
+author: blueskychan_
 desc: 'Time flies!'
 tags:
   - something
