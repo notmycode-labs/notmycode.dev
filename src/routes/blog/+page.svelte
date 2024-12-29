@@ -59,7 +59,7 @@
 
 	{#if query && filteredResults.length > 0 && showDropdown}
 		<ul
-			class="z-40 absolute mt-1 border bg-[var(--background-color)] w-full rounded-md max-h-48 overflow-auto"
+			class="z-40 absolute mt-1 border bg-[var(--form-bg-color)] w-full rounded-md max-h-48 overflow-auto"
 		>
 			{#each filteredResults as result}
 				<a href={`/blog/${result.slug}`}>
