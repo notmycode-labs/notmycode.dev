@@ -18,6 +18,10 @@ body {
 	margin: 0;
 }
 
+p[lang='th'] {
+	font-family: 'Noto Sans Thai', sans-serif;
+}
+
 * {
 	scrollbar-width: none;
 	-ms-overflow-style: none;
