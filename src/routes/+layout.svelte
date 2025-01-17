@@ -3,6 +3,7 @@
 	import '../prism-laserwave.css';
 	import '../fonts.css';
 	import Navbar from '../components/navbar.svelte';
+	import Footer from '../components/footer.svelte';
 	import { onMount } from 'svelte';
 	import owoify from 'owoify-js';
 
@@ -61,13 +62,16 @@
 	});
 </script>
 
-<div class="md:container md:mx-auto relative w-screen px-2 h-screen overflow-x-hidden">
+<div
+	class="md:container md:mx-auto relative w-screen px-2 h-screen overflow-x-hidden flex flex-col"
+>
 	<div bind:this={container} class="absolute inset-0 z-0 pointer-events-none"></div>
-	<div class="relative z-10">
+	<div class="relative z-10 flex-grow">
 		<Navbar />
 		<slot />
 	</div>
 </div>
+<Footer />
 
 <style>
 	@keyframes moveWord {
