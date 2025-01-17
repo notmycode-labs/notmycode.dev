@@ -6,7 +6,7 @@ function fetchBlogArticles() {
 	return Object.keys(blogFiles).map((file) => file.replace('/contents/', '').replace('.md', ''));
 }
 
-export async function GET() {
+export async function GET({ url }) {
 	const blogPages = fetchBlogArticles();
 	const pages = [...staticPages, ...blogPages.map((slug) => `blog/${slug}/`)];
 
