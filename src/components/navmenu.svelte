@@ -3,7 +3,10 @@
 
 	let isOpen = false;
 	let dropdown;
-	const links = [{ href: '/people', label: 'people behind this' }];
+	const links = [
+		{ href: '/people', label: 'people behind this' },
+		{ href: 'https://github.com/notmycode-labs', label: 'github' }
+	];
 
 	function handleClickOutside(event) {
 		if (dropdown && !dropdown.contains(event.target)) {
@@ -36,7 +39,7 @@
 
 	{#if isOpen}
 		<div
-			class="absolute z-20 mt-2 w-48 border border-gray-300 rounded-md bg-[var(--form-bg-color)] shadow-lg"
+			class="absolute z-20 mt-2 w-48 border border-gray-300 rounded-md bg-blue-900/40 shadow-lg"
 			style="right: 0; left: auto; top: 100%; max-width: calc(100vw - 20px);"
 		>
 			{#each links as { href, label }}
