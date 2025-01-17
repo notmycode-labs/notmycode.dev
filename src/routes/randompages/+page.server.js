@@ -1,12 +1,14 @@
-import fs from 'fs';
-import path from 'path';
-
 export async function load() {
-	const randomPagesDir = path.resolve(process.cwd(), 'src/routes/randompages');
-	const data = fs
-		.readdirSync(randomPagesDir)
-		.filter((file) => fs.statSync(path.join(randomPagesDir, file)).isDirectory());
-	return {
-		data
-	};
+        const randomPages = import.meta.glob('./*/*');
+
+        const data = await Promise.all(
+                Object.entries(randomPages).map(async ([path, resolver]) => {
+                        const slug = path.split('/').slice(-2, -1)[0];
+                        return { slug };
+                })
+        );
+        console.log(data);
+        return {
+                data
+        };
 }
