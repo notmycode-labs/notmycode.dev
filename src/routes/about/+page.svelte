@@ -2,7 +2,7 @@
 	class="prose md:prose-lg lg:prose-3xl p-2 prose-h1:text-3xl prose-invert prose-neutral mx-auto h-screen prose-img:rounded-xl prose-video:rounded-lg"
 >
 	<header>
-		<img src="https://bluestars.vercel.app/images/PSX_20240906_142239.jpg" alt="header img" />
+		<img src="https://mac.notmycode.dev/images/PSX_20240906_142239.jpg" alt="header img" />
 		<p class="text-center text-sm mt-2">Photograph by <em>bluestar(mac)</em></p>
 	</header>
 	<h1>Who the hell are you</h1>
