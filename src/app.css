@@ -4,23 +4,25 @@
 
 :root {
 	--primary: rgb(16, 18, 43);
-	--secondary: #ffddde;
-	--link-text-color: #e281d8;
-	--form-bg-color: #1f4e7d;
-	--form-border-color: #ffffff;
-	--button-color: #2a52a6;
+	--secondary: rgb(255, 221, 222);
+	--link-text-color: rgb(226, 129, 216);
+	--form-bg-color: rgb(31, 78, 125);
+	--form-border-color: rgb(255, 255, 255);
+	--button-color: rgb(42, 82, 166);
 }
 
 body {
-	font-family: 'JetBrains Mono', monospace;
+	font-family: 'GeistMono', monospace;
 	background: var(--primary);
 	color: var(--secondary);
 	margin: 0;
 }
 
+/*
 p[lang='th'] {
 	font-family: 'Noto Sans Thai', sans-serif;
 }
+*/
 
 * {
 	scrollbar-width: none;

@@ -1,6 +1,7 @@
 <script>
 	import '../app.css';
 	import '../prism-laserwave.css';
+	import '../fonts.css';
 	import Navbar from '../components/navbar.svelte';
 	import { onMount } from 'svelte';
 	import owoify from 'owoify-js';
