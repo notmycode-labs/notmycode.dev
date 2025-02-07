@@ -6,6 +6,7 @@
 	import Footer from '../components/footer.svelte';
 	import { onMount } from 'svelte';
 	import owoify from 'owoify-js';
+	import { showFirefoxNotice } from '$lib/stores/firefoxNotice';
 
 	let container;
 	let isFirefox = false;
@@ -64,9 +65,9 @@
 	});
 </script>
 
-{#if !isFirefox}
+{#if !isFirefox && $showFirefoxNotice}
     <div class="firefox-notice">
-		<img src="/firefox.png" alt="Firefox logo" class="w-16 h-16"/>
+        <img src="/firefox.png" alt="Firefox logo" class="w-8 h-8"/>
         <p>Looks like you are not using Firefox. For a more friendly environment, please use Firefox.</p>
         <a href="https://www.mozilla.org/firefox/new/" class="firefox-button" target="_blank" rel="noopener noreferrer">
             Download Firefox
@@ -103,7 +104,7 @@
 			transform: translate(0, 0);
 		}
 	}
-	.firefox-notice {
+    .firefox-notice {
         position: fixed;
         bottom: 0;
         left: 50%;
