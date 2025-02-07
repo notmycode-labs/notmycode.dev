@@ -6,7 +6,8 @@
 	import Footer from '../components/footer.svelte';
 	import { onMount } from 'svelte';
 	import owoify from 'owoify-js';
-	import { showFirefoxNotice } from '$lib/stores/firefoxNotice';
+	import { browser } from '$app/environment';
+    import { showFirefoxNotice } from '$lib/stores/firefoxNotice';
 
 	let container;
 	let isFirefox = false;
@@ -65,7 +66,7 @@
 	});
 </script>
 
-{#if !isFirefox && $showFirefoxNotice}
+{#if browser && !isFirefox && $showFirefoxNotice}
     <div class="firefox-notice">
         <img src="/firefox.png" alt="Firefox logo" class="w-8 h-8"/>
         <p>Looks like you are not using Firefox. For a more friendly environment, please use Firefox.</p>

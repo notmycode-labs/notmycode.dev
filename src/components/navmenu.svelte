@@ -49,11 +49,11 @@
 				</a>
 			{/each}
 			<button
-                on:click={() => $showFirefoxNotice = !$showFirefoxNotice}
-                class="block w-full text-left px-4 py-2 hover:bg-blue-800/40"
-            >
-                {$showFirefoxNotice ? 'Hide' : 'Show'} Firefox Notice
-            </button>
+				on:click={() => ($showFirefoxNotice = !$showFirefoxNotice)}
+				class="block w-full text-left px-4 py-2 hover:bg-blue-800/40"
+			>
+				{$showFirefoxNotice ? 'Hide' : 'Show'} Firefox Notice
+			</button>
 		</div>
 	{/if}
 </div>
