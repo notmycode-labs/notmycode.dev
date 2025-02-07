@@ -8,6 +8,7 @@
 	import owoify from 'owoify-js';
 
 	let container;
+	let isFirefox = false;
 
 	const thoughts = [
 		"i'm sitting in front of my computer and it's late night but i can't sleep, like seriously, why can't i sleep i don't get it, it's just one of those nights, y'know? i'm staring at this screen like it's the only thing that's gonna make sense in my life right now, and yet it feels like nothing does, like everything’s just so pointless sometimes. i just keep scrolling through random stuff, overthinking, not understanding how i ended up here, like how is it even possible for time to just keep ticking away while you're stuck in this endless loop? i don’t even know when i started questioning the meaning of it all but i guess that's what happens when you're awake at this hour, right? anyway, at some point, i looked up and bam, the vastness of the universe hit me, and i couldn't help but feel tiny, like the earth is just this tiny dot floating in space and my problems are basically nothing, but it's too much to wrap my mind around and my tears just dropped when i realized how big the universe is.",
@@ -31,6 +32,7 @@
 	}
 
 	onMount(() => {
+		isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
 		const urlParams = new URLSearchParams(window.location.search);
 		const replaceWithOwo = urlParams.has('owo');
 		const owoLevel = urlParams.get('owo') || 'owo';
@@ -62,6 +64,16 @@
 	});
 </script>
 
+{#if !isFirefox}
+    <div class="firefox-notice">
+		<img src="/firefox.png" alt="Firefox logo" class="w-16 h-16"/>
+        <p>Looks like you are not using Firefox. For a more friendly environment, please use Firefox.</p>
+        <a href="https://www.mozilla.org/firefox/new/" class="firefox-button" target="_blank" rel="noopener noreferrer">
+            Download Firefox
+        </a>
+    </div>
+{/if}
+
 <div
 	class="md:container md:mx-auto relative w-screen px-2 h-screen overflow-x-hidden flex flex-col"
 >
@@ -91,4 +103,33 @@
 			transform: translate(0, 0);
 		}
 	}
+	.firefox-notice {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #2a2a2a;
+        padding: 1rem 2rem;
+        border-radius: 8px 8px 0 0;
+        text-align: center;
+        z-index: 1000;
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .firefox-button {
+        background-color: rgb(73, 73, 73);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background-color 0.2s;
+    }
+
+    .firefox-button:hover {
+        background-color: rgb(78, 78, 78);
+    }
 </style>
