@@ -37,4 +37,24 @@
 	<a class="not-prose" href="/blog">Return to /blog</a>
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html data.content}
+
+	<div class="border-b border"></div>
+<script src="https://giscus.app/client.js"
+        data-repo="notmycode-labs/notmycode.dev"
+        data-repo-id="R_kgDOM-8EIA"
+        data-category="General"
+        data-category-id="DIC_kwDOM-8EIM4CmxfA"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="purple_dark"
+        data-lang="en"
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
 </article>
