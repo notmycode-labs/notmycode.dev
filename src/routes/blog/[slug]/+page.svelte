@@ -1,10 +1,34 @@
 <script>
 	import { MetaTags } from 'svelte-meta-tags';
+	import { onMount } from 'svelte';
 	import timeFormatHelper from '../../../lib/timeFormat';
 	export let data;
 
 	var diffTime = new Date() - new Date(data.meta.date);
 	var diffDays = parseInt(diffTime / (1000 * 60 * 60 * 24), 10);
+
+	onMount(() => {
+		const div = document.getElementById('giscus-container');
+
+		const script = document.createElement('script');
+		script.src = 'https://giscus.app/client.js';
+		script.setAttribute('data-repo', 'notmycode-labs/notmycode.dev');
+		script.setAttribute('data-repo-id', 'R_kgDOM-8EIA');
+		script.setAttribute('data-category', 'General');
+		script.setAttribute('data-category-id', 'DIC_kwDOM-8EIM4CmxfA');
+		script.setAttribute('data-mapping', 'pathname');
+		script.setAttribute('data-strict', '0');
+		script.setAttribute('data-reactions-enabled', '1');
+		script.setAttribute('data-emit-metadata', '0');
+
+		script.setAttribute('data-input-position', 'bottom');
+		script.setAttribute('data-theme', 'catppuccin_mocha');
+		script.setAttribute('data-lang', 'en');
+		script.setAttribute('crossorigin', 'anonymous');
+		script.async = true;
+
+		div.appendChild(script);
+	});
 </script>
 
 <MetaTags
@@ -38,23 +62,5 @@
 	<!-- eslint-disable-next-line svelte/no-at-html-tags -->
 	{@html data.content}
 
-	<div class="border-b border"></div>
-<script src="https://giscus.app/client.js"
-        data-repo="notmycode-labs/notmycode.dev"
-        data-repo-id="R_kgDOM-8EIA"
-        data-category="General"
-        data-category-id="DIC_kwDOM-8EIM4CmxfA"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="purple_dark"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-</script>
-
-
-
+	<div id="giscus-container" class="border-t"></div>
 </article>

