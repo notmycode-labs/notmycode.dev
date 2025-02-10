@@ -7,7 +7,7 @@
 	import { onMount } from 'svelte';
 	import owoify from 'owoify-js';
 	import { browser } from '$app/environment';
-    import { showFirefoxNotice } from '$lib/stores/firefoxNotice';
+	import { showFirefoxNotice } from '$lib/stores/firefoxNotice';
 
 	let container;
 	let isFirefox = false;
@@ -67,13 +67,20 @@
 </script>
 
 {#if browser && !isFirefox && $showFirefoxNotice}
-    <div class="firefox-notice">
-        <img src="/firefox.png" alt="Firefox logo" class="w-8 h-8"/>
-        <p>Looks like you are not using Firefox. For a more friendly environment, please use Firefox.</p>
-        <a href="https://www.mozilla.org/firefox/new/" class="firefox-button" target="_blank" rel="noopener noreferrer">
-            Download Firefox
-        </a>
-    </div>
+	<div class="firefox-notice">
+		<img src="/firefox.png" alt="Firefox logo" class="w-8 h-8" />
+		<p>
+			Looks like you are not using Firefox. For a more friendly environment, please use Firefox.
+		</p>
+		<a
+			href="https://www.mozilla.org/firefox/new/"
+			class="firefox-button"
+			target="_blank"
+			rel="noopener noreferrer"
+		>
+			Download Firefox
+		</a>
+	</div>
 {/if}
 
 <div
@@ -105,33 +112,33 @@
 			transform: translate(0, 0);
 		}
 	}
-    .firefox-notice {
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #2a2a2a;
-        padding: 1rem 2rem;
-        border-radius: 8px 8px 0 0;
-        text-align: center;
-        z-index: 1000;
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-    }
+	.firefox-notice {
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: #2a2a2a;
+		padding: 1rem 2rem;
+		border-radius: 8px 8px 0 0;
+		text-align: center;
+		z-index: 1000;
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+	}
 
-    .firefox-button {
-        background-color: rgb(73, 73, 73);
-        color: white;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.2s;
-    }
+	.firefox-button {
+		background-color: rgb(73, 73, 73);
+		color: white;
+		padding: 0.5rem 1rem;
+		border-radius: 4px;
+		text-decoration: none;
+		font-weight: bold;
+		transition: background-color 0.2s;
+	}
 
-    .firefox-button:hover {
-        background-color: rgb(78, 78, 78);
-    }
+	.firefox-button:hover {
+		background-color: rgb(78, 78, 78);
+	}
 </style>

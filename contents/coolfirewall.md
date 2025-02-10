@@ -16,9 +16,11 @@ I just conducted some tests to validate the CSNE firewall's behavior when under 
 I attempted to connect to the target server (103.253.75.229:25565) using `nc`.
 
 The connection attempt failed, with the message:
+
 ```
 103.253.75.229: inverse host lookup failed: Unknown host
 ```
+
 This suggests that the firewall is rejecting connections from external IPs, possibly due to attack detection.
 
 #### 2. Test from Thai Server (IP - 223.24.191.17):
@@ -26,27 +28,35 @@ This suggests that the firewall is rejecting connections from external IPs, poss
 I attempted to connect to the same target server (103.253.75.229:25565) using `nc`.
 
 The connection was successful, as shown by:
+
 ```
 Connection to 103.253.75.229 25565 port [tcp/*] succeeded!
 ```
+
 #### 3. Verbose Ping Test from Thailand Server:
 
 I ran the ping command with verbose mode to check connectivity to 103.253.75.229:
+
 ```
 ping -v 103.253.75.229
 ```
+
 The result showed 100% packet loss, with the following statistics indicating the ping was blocked:
+
 ```
 --- 103.253.75.229 ping statistics --- 12 packets transmitted, 0 received, 100% packet loss, time 11262ms
 ```
+
 This confirms that the ping packet was blocked, likely by the firewall.
 
 #### 4. Verbose Ping Test from Singapore Server:
 
 I ran the ping command from the Singapore server to the target:
+
 ```
 ping -v 103.253.75.229
 ```
+
 The result showed 100% packet loss, with the following error messages:
 
 ```
@@ -56,4 +66,5 @@ ping: sock4.fd: 3 (socktype: SOCK_RAW), sock6.fd: 4 (socktype: SOCK_RAW), hints.
 The ping failed with 100% packet loss, suggesting the firewall is blocking connections from external IPs.
 
 #### Summary:
+
 This firewall effectively blocks outside IPs after detecting an attack.
