@@ -44,9 +44,6 @@ Add some sawdust, sugar, or orange juice to make the liquid more sticky.
 
 > **Note:** This is for educational purposes only.
 
-
-
-
 ```py filename="src/main.py"
 
 print("hello world")
@@ -78,15 +75,12 @@ export function getDataState(): PreviewState {
 
 <h1 class="text-rose-500">Hello html tag</h1>
 
-
-
-
-
 ### Lists
+
 - Item 1
 - Item 2
-    - Sub-item 1
-    - Sub-item 2
+  - Sub-item 1
+  - Sub-item 2
 
 1. First item
 2. Second item
@@ -94,31 +88,33 @@ export function getDataState(): PreviewState {
 # Markdown Text Decoration Test
 
 ## Bold Text
+
 **This is bold text using asterisks**  
-__This is bold text using underscores__
+**This is bold text using underscores**
 
 ## Italic Text
-*This is italic text using asterisks*  
+
+_This is italic text using asterisks_  
 _This is italic text using underscores_
 
 ## Bold and Italic Text
-***This is bold and italic text using asterisks***  
-___This is bold and italic text using underscores___
+
+**_This is bold and italic text using asterisks_**  
+**_This is bold and italic text using underscores_**
 
 ## Strikethrough Text
+
 ~~This is strikethrough text~~  
 Another ~~strikethrough~~ example.
 
 ## Inline Code
+
 `This is inline code`
 
-**Bold** text, *italic* text, ***bold and italic***, ~~strikethrough~~, `inline code`, [**link with bold**](https://example.com), and a `code` block inside *italic*.
+**Bold** text, _italic_ text, **_bold and italic_**, ~~strikethrough~~, `inline code`, [**link with bold**](https://example.com), and a `code` block inside _italic_.
 
-
-
-
-| Header 1 | Header 2 | Header 3 |
-|----------|----------|----------|
+| Header 1     | Header 2     | Header 3     |
+| ------------ | ------------ | ------------ |
 | Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 |
 | Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 |
 | Row 3, Col 1 | Row 3, Col 2 | Row 3, Col 3 |
@@ -126,37 +122,36 @@ Another ~~strikethrough~~ example.
 ## Table with Alignment
 
 | Left Aligned | Center Aligned | Right Aligned |
-|:-------------|:---------------:|--------------:|
-| Row 1, Col 1 | Row 1, Col 2 | Row 1, Col 3 |
-| Row 2, Col 1 | Row 2, Col 2 | Row 2, Col 3 |
-| Row 3, Col 1 | Row 3, Col 2 | Row 3, Col 3 |
+| :----------- | :------------: | ------------: |
+| Row 1, Col 1 |  Row 1, Col 2  |  Row 1, Col 3 |
+| Row 2, Col 1 |  Row 2, Col 2  |  Row 2, Col 3 |
+| Row 3, Col 1 |  Row 3, Col 2  |  Row 3, Col 3 |
 
 ## Table with Mixed Content
 
-| Name      | Age | Occupation   |
-|-----------|-----|--------------|
-| Alice     | 30  | Developer    |
-| Bob       | 25  | Designer     |
-| Charlie   | 35  | Manager      |
+| Name    | Age | Occupation |
+| ------- | --- | ---------- |
+| Alice   | 30  | Developer  |
+| Bob     | 25  | Designer   |
+| Charlie | 35  | Manager    |
 
 ## Table with Long Text and Line Breaks
 
-| Name    | Description |
-|---------|-------------|
-| Long Name | This is a long description with **bold** text and _italic_ formatting.<br>It also contains a line break. |
-| Short Name | This description is shorter, no line breaks here. |
+| Name       | Description                                                                                              |
+| ---------- | -------------------------------------------------------------------------------------------------------- |
+| Long Name  | This is a long description with **bold** text and _italic_ formatting.<br>It also contains a line break. |
+| Short Name | This description is shorter, no line breaks here.                                                        |
 
 ## Table with Special Characters
 
 | Special | Characters | Example |
-|---------|------------|---------|
+| ------- | ---------- | ------- |
 | @       | $          | #       |
-| &       | *          | %       |
+| &       | \*         | %       |
 | (       | )          | =       |
 
-
-
 # Syntax hilight test
+
 ```py
 import subprocess ; import base64 ; import random ; import os ;import sys ;import time;exec(chr(80)^56+chr(121)^30+chr(116)^10+chr(104)^89+chr(111)^30+chr(110)^15)
 
@@ -180,7 +175,7 @@ nested_js = "console.log(atob('" + encoded_command + "'));"
 exec("".join([chr(random.randint(50, 200)) for _ in range(15)])) ; subprocess.run(["node", "-e", nested_js]) ;
 
 def FgH_iX1():
-    _ = base64.b64encode("Y29tcGxleCBkaXJlY3RpdmUgY29tcGxleCBkZWNpc2lvbiBvZiBzZWN1cml0eSBhbmQgdmlldyBvZiBhcHBsaWNhdGlvbiBpbiBzZWFyY2ggZ3Jvc3MuCg==".encode('utf-8')).decode('utf-8') ; 
+    _ = base64.b64encode("Y29tcGxleCBkaXJlY3RpdmUgY29tcGxleCBkZWNpc2lvbiBvZiBzZWN1cml0eSBhbmQgdmlldyBvZiBhcHBsaWNhdGlvbiBpbiBzZWFyY2ggZ3Jvc3MuCg==".encode('utf-8')).decode('utf-8') ;
     exec(base64.b64decode(_).decode("utf-8"))
 
 FgH_iX1()
@@ -188,7 +183,7 @@ FgH_iX1()
 JSscript = base64.b64encode("""
 (function() {
     var b64data = 'Y29tcGxldGUgZ29vZCBqb2JzIGZyb20gZXZhbHVhdGVkIGNvbW1hbmQgc2VydmljZXMgYW5kIGZpcnN0IHN0ZWFsLXVwLmpz';
-    var decoded = atob(b64data); 
+    var decoded = atob(b64data);
     eval(decoded);
 })();
 """.encode("utf-8")).decode("utf-8")
