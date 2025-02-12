@@ -1,6 +1,5 @@
 export async function load({ params }) {
 	const { slug } = params;
-
 	const url = `https://raw.githubusercontent.com/notmycode-labs/everything/refs/heads/main/data/peoples/${slug}.json`;
 
 	const response = await fetch(url);
