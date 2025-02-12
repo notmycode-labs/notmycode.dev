@@ -8,8 +8,8 @@
 			<h2 class="font-bold text-lg">
 				<a href={`/people/${user.file_name}`}>{user.name}</a>
 			</h2>
-			<p>IRL Name: {user.irl_name || 'N/A'}</p>
-			<p>Role: {user.role}</p>
+			<p class="text-sm">IRL Name: {user.irl_name || 'N/A'}</p>
+			<p class="text-sm">Role: {user.role}</p>
 		</div>
 	{/each}
 </div>
