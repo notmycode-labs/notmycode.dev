@@ -131,7 +131,7 @@
     }
 
 	.firefox-button {
-		background-color: rgb(73, 73, 73);
+		background-color: rgb(73, 73, 73, 0.5);
 		color: white;
 		padding: 0.5rem 1rem;
 		border-radius: 4px;
