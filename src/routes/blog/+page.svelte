@@ -82,7 +82,7 @@
 			</div>
 			<p class="text-sm mt-2 mb-3">{item.desc}</p>
 
-			<div class="text-xs font-semibold mb-1">
+			<div class="text-xs font-semibold mb-0.5">
 				Tags:
 				{#each item.tags as tag}
 					<span class="border m-0.5 px-2 rounded-md">{tag}</span>
