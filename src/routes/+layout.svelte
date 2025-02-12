@@ -43,26 +43,33 @@
 		if (replaceWithOwo) {
 			owoifyText(document.body, owoLevel);
 		}
-
 		allWords.forEach((word) => {
 			const wordElement = document.createElement('div');
 			wordElement.className = 'absolute text-white/10 text-xs z-0';
-
 			wordElement.textContent = word;
 
 			const position = {
-				x: Math.random() * (window.innerWidth - 10),
-				y: Math.random() * (window.innerHeight - 10)
+				x: Math.random() * window.innerWidth,
+				y: Math.random() * window.innerHeight
 			};
 
 			wordElement.style.left = `${position.x}px`;
 			wordElement.style.top = `${position.y}px`;
 
 			container.appendChild(wordElement);
-
-			wordElement.style.animation = `moveWord ${Math.random() * 10 + 5}s ease-in-out infinite`;
-
 			wordsData.push({ element: wordElement, position });
+
+			function moveWord() {
+				const deltaX = (Math.random() - 0.5) * 500;
+				const deltaY = (Math.random() - 0.5) * 500;
+
+				wordElement.style.transition = `transform ${Math.random() * 3 + 2}s ease-in-out`;
+				wordElement.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+
+				setTimeout(moveWord, Math.random() * 3000 + 2000);
+			}
+
+			moveWord();
 		});
 	});
 </script>
@@ -71,7 +78,8 @@
 	<div class="firefox-notice">
 		<img src="/firefox.png" alt="Firefox logo" class="w-8 h-8" />
 		<p>
-			Looks like you are not using Firefox. For a more friendly environment, please consider switching to Firefox.
+			Looks like you are not using Firefox. For a more friendly environment, please consider
+			switching to Firefox.
 		</p>
 		<a
 			href="https://www.mozilla.org/firefox/new/"
@@ -101,13 +109,13 @@
 			transform: translate(0, 0);
 		}
 		25% {
-			transform: translate(calc(100vw * 0.1), calc(100vh * 0.1));
+			transform: translate(calc(100vw * (random() - 0.5)), calc(100vh * (random() - 0.5)));
 		}
 		50% {
-			transform: translate(calc(100vw * -0.1), calc(100vh * -0.1));
+			transform: translate(calc(100vw * (random() - 0.5)), calc(100vh * (random() - 0.5)));
 		}
 		75% {
-			transform: translate(calc(100vw * 0.1), calc(100vh * -0.1));
+			transform: translate(calc(100vw * (random() - 0.5)), calc(100vh * (random() - 0.5)));
 		}
 		100% {
 			transform: translate(0, 0);
@@ -115,20 +123,20 @@
 	}
 
 	.firefox-notice {
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: rgba(42, 42, 42, 0.5);
-        padding: 1rem 2rem;
-        border-radius: 8px 8px 0 0;
-        text-align: center;
-        z-index: 1000;
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-    }
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: rgba(42, 42, 42, 0.5);
+		padding: 1rem 2rem;
+		border-radius: 8px 8px 0 0;
+		text-align: center;
+		z-index: 1000;
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+	}
 
 	.firefox-button {
 		background-color: rgb(73, 73, 73, 0.5);
