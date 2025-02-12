@@ -3,6 +3,7 @@
 	import { showFirefoxNotice } from '$lib/stores/firefoxNotice';
 
 	let isOpen = false;
+	let isFirefox = false;
 	let dropdown;
 	const links = [
 		{ href: '/people', label: 'people behind this' },
@@ -20,6 +21,7 @@
 	}
 
 	onMount(() => {
+		isFirefox = navigator.userAgent.toLowerCase().includes('firefox');
 		document.addEventListener('click', handleClickOutside);
 		return () => {
 			document.removeEventListener('click', handleClickOutside);
@@ -48,12 +50,14 @@
 					{label}
 				</a>
 			{/each}
-			<button
-				on:click={() => ($showFirefoxNotice = !$showFirefoxNotice)}
-				class="block w-full text-left px-4 py-2 hover:bg-blue-800/40"
-			>
-				{$showFirefoxNotice ? 'Hide' : 'Show'} Firefox Notice
-			</button>
+			{#if !isFirefox}
+				<button
+					on:click={() => ($showFirefoxNotice = !$showFirefoxNotice)}
+					class="block w-full text-left px-4 py-2 hover:bg-blue-800/40"
+				>
+					{$showFirefoxNotice ? 'Hide' : 'Show'} Firefox Notice
+				</button>
+			{/if}
 		</div>
 	{/if}
 </div>
