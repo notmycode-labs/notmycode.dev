@@ -80,12 +80,12 @@
 					<h2 class="font-bold text-lg">{item.title}</h2>
 				</a>
 			</div>
-			<p class="text-sm">{item.desc}</p>
+			<p class="text-sm mt-2 mb-3">{item.desc}</p>
 
-			<div>
+			<div class="text-xs font-semibold mb-1">
 				Tags:
 				{#each item.tags as tag}
-					<span class="border mt-1.5 px-2 rounded-md text-xs">{tag}</span>
+					<span class="border m-0.5 px-2 rounded-md">{tag}</span>
 				{/each}
 			</div>
 
