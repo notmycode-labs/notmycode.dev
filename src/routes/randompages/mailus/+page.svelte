@@ -12,14 +12,12 @@
 			content: `# New Contact Form Submission\n\n📧 Email: ${email}\n📝 Message: ${message}`
 		};
 
-		//logic here meow
-		const secret = env.WEBHOOK_SECRET;
+		//logic here meowi
 		try {
 			const res = await fetch('https://webhook-handler.takemypic5121.workers.dev', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
-					'X-Webhook-Secret': secret,
 				},
 				body: JSON.stringify(payload)
 			});
