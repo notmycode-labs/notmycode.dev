@@ -70,9 +70,13 @@
 {#if browser && !isFirefox && $showFirefoxNotice}
 	<div class="firefox-notice">
 		<img src="/firefox.png" alt="Firefox logo" class="w-8 h-8" />
-		<p>
-			Looks like you are not using Firefox. For a more friendly environment, please consider switching to Firefox.
-		</p>
+		<div>
+			<p>
+				Looks like you are not using Firefox. For a more friendly environment, please consider
+				switching to Firefox.
+			</p>
+			<p class="text-sm text-gray-600 mt-2">(You can hide this in More > Hide Firefox Notice)</p>
+		</div>
 		<a
 			href="https://www.mozilla.org/firefox/new/"
 			class="firefox-button"
@@ -115,20 +119,20 @@
 	}
 
 	.firefox-notice {
-        position: fixed;
-        bottom: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: rgba(42, 42, 42, 0.5);
-        padding: 1rem 2rem;
-        border-radius: 8px 8px 0 0;
-        text-align: center;
-        z-index: 1000;
-        display: flex;
-        gap: 1rem;
-        align-items: center;
-        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
-    }
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		background-color: rgba(42, 42, 42, 0.5);
+		padding: 1rem 2rem;
+		border-radius: 8px 8px 0 0;
+		text-align: center;
+		z-index: 1000;
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+		box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+	}
 
 	.firefox-button {
 		background-color: rgb(73, 73, 73, 0.5);
