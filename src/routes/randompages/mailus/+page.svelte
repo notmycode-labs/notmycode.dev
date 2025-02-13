@@ -29,6 +29,7 @@
 			successMessage = 'Submitted successfully!';
 		} catch (error) {
 			successMessage = 'Submission failed!';
+			console.log(error);
 		}
 
 		setTimeout(() => {
