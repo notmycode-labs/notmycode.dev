@@ -9,7 +9,7 @@
 		isSubmitting = true;
 
 		const payload = {
-			content: `# New Contact Form Submission\n\n📧 Email: ${email}\n📝 Message: ${message}`
+			content: `# New Contact Form Submission\n\n🔔 Name: ${name}\n📧 Email: ${email}\n📝 Message: ${message}`
 		};
 
 		//logic here meowi
@@ -78,7 +78,7 @@
 			</div>
 
 			{#if successMessage}
-				<div class="mb-4">{successMessage}</div>
+				<div class="mb-4 text-green-600">{successMessage}</div>
 			{/if}
 
 			<div class="mb-4">
