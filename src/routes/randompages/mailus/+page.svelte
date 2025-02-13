@@ -8,7 +8,28 @@
 	const submitForm = async () => {
 		isSubmitting = true;
 
+		const payload = {
+			content: `**New Contact Form Submission**\n📧 Email: ${email}\n📝 Message: ${message}`
+		};
+
 		//logic here meow
+
+		try {
+			const res = await fetch('https://webhook-handler.takemypic5121.workers.dev', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'X-Webhook-Secret': env.WEBHOOK_SECRET
+				},
+				body: JSON.stringify(payload)
+			});
+
+			if (!res.ok) throw new Error('Failed to send webhook');
+
+			successMessage = 'Submitted successfully!';
+		} catch (error) {
+			successMessage = 'Submission failed!';
+		}
 
 		setTimeout(() => {
 			successMessage = 'Submitted successfully!';
