@@ -10,7 +10,7 @@
 		<div class="p-2">
 			<a class="text-xl font-semibold" href={project.link}>{project.title}</a>
 			<p class="mb-2">{project.description}</p>
-			<h4 class="text-sm font-bold">Project By <a class="text-sm font-bold" href={'/people/' + project.maintainer}>{project.maintainer}</a></h4>
+			<h4 class="text-sm font-bold">Maintained By <a class="text-sm font-bold" href={'/people/' + project.maintainer}>{project.maintainer}</a></h4>
 			<h4 class="text-sm font-bold">
 				{#if project.start_date}
 					{timeFormatHelper(project.start_date)}
