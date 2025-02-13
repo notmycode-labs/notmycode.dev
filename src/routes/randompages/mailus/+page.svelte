@@ -13,13 +13,13 @@
 		};
 
 		//logic here meow
-
+		const secret = env.WEBHOOK_SECRET;
 		try {
 			const res = await fetch('https://webhook-handler.takemypic5121.workers.dev', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
-					'X-Webhook-Secret': env.WEBHOOK_SECRET,
+					'X-Webhook-Secret': secret,
 				},
 				body: JSON.stringify(payload)
 			});
