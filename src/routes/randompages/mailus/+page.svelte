@@ -8,10 +8,31 @@
 	const submitForm = async () => {
 		isSubmitting = true;
 
-		//logic here
+		const payload = {
+			content: `**New Contact Form Submission**\n📧 Email: ${email}\n📝 Message: ${message}`
+		};
+
+		//logic here meow
+
+		try {
+			const res = await fetch('https://webhook-handler.takemypic5121.workers.dev', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+					'X-Webhook-Secret': env.WEBHOOK_SECRET
+				},
+				body: JSON.stringify(payload)
+			});
+
+			if (!res.ok) throw new Error('Failed to send webhook');
+
+			successMessage = 'Submitted successfully!';
+		} catch (error) {
+			successMessage = 'Submission failed!';
+		}
 
 		setTimeout(() => {
-			successMessage = 'meowmeowmeow';
+			successMessage = 'Submitted successfully!';
 			isSubmitting = false;
 		}, 1000);
 	};
@@ -22,35 +43,35 @@
 		<h1 class="text-2xl font-bold mb-4">Contact Us</h1>
 		<form on:submit|preventDefault={submitForm}>
 			<div class="mb-4">
-				<label for="name" class="block text-sm font-medium">Your Name</label>
+				<label for="name" class="block text-sm font-medium mb-2">Your Name</label>
 				<input
 					id="name"
 					type="text"
 					bind:value={name}
-					class="w-full px-3 py-2 rounded-md"
+					class="w-full px-3 py-2 rounded-md bg-gray-700/50"
 					placeholder="Enter your name"
 					required
 				/>
 			</div>
 
 			<div class="mb-4">
-				<label for="email" class="block text-sm font-medium">Your Email</label>
+				<label for="email" class="block text-sm font-medium mb-2">Your Email</label>
 				<input
 					id="email"
 					type="email"
 					bind:value={email}
-					class="w-full px-3 py-2 rounded-md"
+					class="w-full px-3 py-2 rounded-md bg-gray-700/50"
 					placeholder="Enter your email"
 					required
 				/>
 			</div>
 
 			<div class="mb-4">
-				<label for="message" class="block text-sm font-medium">Your Message</label>
+				<label for="message" class="block text-sm font-medium mb-2">Your Message</label>
 				<textarea
 					id="message"
 					bind:value={message}
-					class="w-full px-3 py-2 rounded-md"
+					class="w-full px-3 py-2 rounded-md bg-gray-700/50"
 					placeholder="Enter your message"
 					rows="4"
 					required

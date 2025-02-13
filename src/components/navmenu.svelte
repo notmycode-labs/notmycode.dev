@@ -7,7 +7,8 @@
 	let dropdown;
 	const links = [
 		{ href: '/people', label: 'people behind this' },
-		{ href: 'https://github.com/notmycode-labs', label: 'github' }
+		{ href: 'https://github.com/notmycode-labs', label: 'github' },
+		{ href: '/randompages/mailus', label: 'contact us' }
 	];
 
 	function handleClickOutside(event) {
