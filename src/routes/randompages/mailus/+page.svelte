@@ -9,13 +9,18 @@
 		isSubmitting = true;
 
 		const payload = {
-			content: `**New Contact Form Submission**\n📧 Email: ${email}\n📝 Message: ${message}`
+			content: `# New Contact Form Submission\n\n📧 Email: ${email}\n📝 Message: ${message}`
 		};
+
+		//logic here meow
 
 		try {
 			const res = await fetch('https://webhook-handler.takemypic5121.workers.dev', {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
+				headers: {
+					'Content-Type': 'application/json',
+					'X-Webhook-Secret': env.WEBHOOK_SECRET,
+				},
 				body: JSON.stringify(payload)
 			});
 
@@ -23,11 +28,13 @@
 
 			successMessage = 'Submitted successfully!';
 		} catch (error) {
-			console.error('Error submitting form:', error);
 			successMessage = 'Submission failed!';
 		}
 
-		isSubmitting = false;
+		setTimeout(() => {
+			successMessage = 'Submitted successfully!';
+			isSubmitting = false;
+		}, 1000);
 	};
 </script>
 
